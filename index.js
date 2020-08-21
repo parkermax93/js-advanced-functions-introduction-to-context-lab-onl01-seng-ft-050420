@@ -11,3 +11,5 @@ const createEmployeeRecord = info => {
 };
 
 const createEmployeeRecords = array => array.map( employee => createEmployeeRecord(employee))
+
+const createTimeInEvent
