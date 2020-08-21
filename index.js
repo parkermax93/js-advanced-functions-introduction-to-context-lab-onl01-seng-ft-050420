@@ -43,4 +43,21 @@ const wagesEarnedOnDate = (employee, date) => {
 
 const allWagesFor = employee => {
   const dates = employee.timeInEvents.map(e => e.date);
+  return dates.reduce( (acc, i) => {
+    acc += wagesEarnedOnDate(employee, i);
+    return acc;
+  }, 0);
 };
+
+const findEmployeeByFirstName = (array, firstName) => {
+  return array.find(e => e.firstName === firstName)
+}
+
+const calculatePayroll = (array) => {
+  const wages = array.map(e => allWagesFor(e))
+  return wages.reduce( (acc, i) => {
+    acc += i;
+    return acc; 
+  }, 0)
+}
+
